@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "376322479880",
+    "project_id": "wayo---goods-delivery-app",
+    "storage_bucket": "wayo---goods-delivery-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376322479880:android:32e19f3b731507991dbebd",
+        "android_client_info": {
+          "package_name": "com.aman.wayo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnV_sPIPaKNP8ErKjhkljP22L5Cd_2Css"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
