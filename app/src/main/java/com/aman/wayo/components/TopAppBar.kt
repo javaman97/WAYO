@@ -3,9 +3,11 @@ package com.aman.wayo.components
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
@@ -36,43 +38,33 @@ import com.aman.wayo.ui.theme.SecondaryColor
 import com.aman.wayo.ui.theme.fontFamily
 
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopAppBar(
-    title: String,
-    navController: NavHostController,
-    function: () -> Unit,
+    title: String
 ) {
-    val context = LocalContext.current
-
-    CenterAlignedTopAppBar(
-        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-            containerColor = SecondaryColor
-        ),
-        title = {
-            Text(
-                text =  title,
-                fontWeight = FontWeight.Bold,
-                fontFamily = fontFamily,
-                fontSize = 18.sp,
-                color = PrimaryDarkColor
-            )
-
-        },
-        actions = {
-            Card(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .wrapContentHeight(),
-                shape = RoundedCornerShape(bottomStart = 8.dp, bottomEnd = 8.dp),
-                border = BorderStroke(0.5.dp, PrimaryColor.copy(0.6f))
-            ) {
-
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(56.dp),
+        shape = RoundedCornerShape(bottomStart = 8.dp, bottomEnd = 8.dp),
+        border = BorderStroke(0.5.dp, PrimaryColor.copy(0.6f))
+    ) {
+        Box(modifier = Modifier
+            .fillMaxSize()
+            .background(SecondaryColor))
+        {
+                Text(
+                    modifier = Modifier.align(Alignment.Center),
+                    text = title,
+                    color = PrimaryColor,
+                    fontFamily = fontFamily,
+                    fontSize = 14.sp
+                )
+                Spacer(modifier = Modifier.height(5.dp))
             }
         }
-    )
 
-}
+    }
 
 
 @Composable
@@ -84,7 +76,9 @@ fun TopAppBarHome() {
         shape = RoundedCornerShape(bottomStart = 8.dp, bottomEnd = 8.dp),
         border = BorderStroke(0.5.dp, PrimaryColor.copy(0.6f))
     ) {
-        Row(modifier = Modifier.fillMaxWidth().background(SecondaryColor), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Start ) {
+        Row(modifier = Modifier
+            .fillMaxWidth()
+            .background(SecondaryColor), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Start ) {
 
                     Spacer(modifier = Modifier.width(8.dp))
                     Icon(
@@ -102,7 +96,7 @@ fun TopAppBarHome() {
                     fontFamily = fontFamily,
                     fontSize = 14.sp
                 )
-                Spacer(modifier = Modifier.height(5.dp))
+
                 Text(
                     "Hassle free pickups and drops",
                     color = PrimaryColor,
@@ -120,6 +114,7 @@ fun TopAppBarHome() {
 @Composable
 fun PreviewTopBarHome(){
     TopAppBarHome()
+    TopAppBar(title = "My Profile")
 }
 
 

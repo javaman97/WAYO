@@ -72,9 +72,8 @@ fun ImageSliderWithDots(auto:Boolean,height:Dp,images: List<Int>) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(height)
-                    .clip(RoundedCornerShape(12.dp)
+                    .clip(RoundedCornerShape(20.dp))
                 )
-            )
         }
 
         Spacer(modifier = Modifier.height(5.dp))

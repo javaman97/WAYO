@@ -4,11 +4,14 @@ import ImageSliderWithDots
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,10 +30,10 @@ import com.aman.wayo.ui.theme.fontFamily
 
 
 @Composable
-fun HomeScreen(navController: NavController){
+fun HomeScreen(navController: NavController, paddingValues: PaddingValues){
     Column(modifier = Modifier
-        .fillMaxWidth()
-        .fillMaxHeight()
+        .fillMaxSize()
+        .padding(paddingValues)
         .background(SecondaryColor),
         horizontalAlignment = Alignment.CenterHorizontally
     ){
@@ -73,8 +76,3 @@ fun HomeScreen(navController: NavController){
     }
 }
 
-@Preview
-@Composable
-fun PreviewHomeScreen(){
-    HomeScreen(rememberNavController())
-}
